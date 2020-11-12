@@ -1,0 +1,12 @@
+.container-spinner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 0vh;
+}
+
+
+mat-list-item {
+    &:hover{
+        background-color: #cecece;
+    }
+}

@@ -1,0 +1,50 @@
+<mat-card>
+    <mat-card-title >Login</mat-card-title>
+
+    <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                    type="email"
+                    matInput
+                    placeholder="e-mail"
+                    formControlName="email"
+                    autofocus
+                />
+                <mat-error *ngIf="loginForm.controls['email'].errors?.required">Email is required</mat-error>
+                <mat-error *ngIf="loginForm.controls['email'].errors?.pattern">Enter a valid Email address</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input
+                    [type]="pwdHide ? 'password' : 'text'"
+                    matInput
+                    placeholder="Password"
+                    formControlName="password"
+                />
+                <button type="button" mat-icon-button matSuffix (click)="pwdHide = !pwdHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="pwdHide">
+                    <mat-icon matSuffix>{{pwdHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+                </button>
+                <mat-error *ngIf="loginForm.controls['password'].errors?.required">Password is required</mat-error>
+            </mat-form-field>
+
+            <p align="end">
+                <button
+                    type="submit"
+                    mat-raised-button
+                    color="primary"
+                    disabled="{{!loginForm.valid}}"
+                >
+                    <mat-spinner diameter="20" *ngIf="loading"></mat-spinner>
+                    
+                    <mat-icon *ngIf="!loading" aria-hidden="false" aria-label="Safe icon">login</mat-icon>
+                    <span *ngIf="!loading">Login</span>
+                </button>
+            </p>
+            
+        </form>
+    </mat-card-content>
+</mat-card>

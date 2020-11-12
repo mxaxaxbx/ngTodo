@@ -1,0 +1,43 @@
+<mat-sidenav-container class="app-container">
+    <mat-sidenav #sidenav class="app-sidenav" mode="side" [opened]="user$">
+        <mat-nav-list role="navigation" style="min-width:60px;">
+            
+            <mat-list-item routerLink="/profile" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" matLine>
+                <div *ngIf="user$?.photoURL" mat-card-avatar style="background-image: url({{user$.photoURL}}); background-size: cover;"></div>
+                <mat-icon *ngIf="!user$?.photoURL" class="home_icon collapse-icon vcenter" mat-list-icon>account_circle</mat-icon>
+                <span *ngIf="!showFiller">
+                    {{user$.displayName || 'Profile'}}
+                </span>
+            </mat-list-item>
+
+            <mat-divider></mat-divider>
+
+            <mat-list-item routerLink="/list" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" matLine>
+                <mat-icon class="home_icon collapse-icon vcenter" mat-list-icon>list</mat-icon>
+                <span *ngIf="!showFiller">
+                    Tasks List
+                </span>
+            </mat-list-item>
+
+            <mat-list-item routerLink="/add/task" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" matLine>
+                <mat-icon class="home_icon collapse-icon vcenter" mat-list-icon>playlist_add</mat-icon>
+                <span *ngIf="!showFiller">
+                    Add Task
+                </span>
+            </mat-list-item>
+      
+        </mat-nav-list>
+
+        <button class="bottom-button-nav"  mat-icon-button (click)="showFiller = !showFiller" mat-raised-button>
+            <mat-icon *ngIf="!showFiller">chevron_left</mat-icon>
+            <mat-icon *ngIf="showFiller">chevron_right</mat-icon> 
+        </button>
+    </mat-sidenav>
+  
+    <div class="app-sidenav-content">
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+  
+</mat-sidenav-container>

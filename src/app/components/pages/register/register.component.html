@@ -1,0 +1,62 @@
+<mat-card *ngIf="!loading">
+    <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                    type="email"
+                    matInput
+                    placeholder="e-mail"
+                    formControlName="email"
+                    autofocus
+                />
+                <mat-error *ngIf="registerForm.controls['email'].errors?.required">Email is required</mat-error>
+                <mat-error *ngIf="registerForm.controls['email'].errors?.pattern">Enter a valid Email address</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input
+                    type="password"
+                    matInput
+                    placeholder="Password"
+                    formControlName="password1"
+                />
+                <mat-error *ngIf="registerForm.controls['password1'].errors?.required">Password is required</mat-error>
+                <mat-error *ngIf="registerForm.controls['password1'].errors?.minlength">Enter a password min length of 8 characters</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password again</mat-label>
+                <input
+                    type="password"
+                    matInput
+                    placeholder="Password"
+                    formControlName="password2"
+                    [errorStateMatcher]="matcher"
+                />
+                <mat-error *ngIf="registerForm.controls['password2'].errors?.required">Password again is required</mat-error>
+                <mat-error *ngIf="registerForm.hasError('notSame')">The Passwords Not Same</mat-error>
+            </mat-form-field>
+
+            <p align="end">
+                <button type="submit" mat-raised-button color="primary" [disabled]="!registerForm.valid">
+                    <mat-icon>done</mat-icon>
+                    Register
+                </button>
+        </form>
+    </mat-card-content>
+
+</mat-card>
+
+<div *ngIf="loading" align="center">
+    <mat-card>
+        <mat-card-content>
+            <mat-spinner></mat-spinner>
+        </mat-card-content>
+    </mat-card>
+</div>

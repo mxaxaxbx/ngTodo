@@ -1,0 +1,47 @@
+<mat-toolbar color="primary">
+    <button *ngIf="user$" (click)="toggleSideNav()" _ngcontent-bhr-c226="" mat-icon-button="" class="mat-focus-indicator mat-icon-button mat-button-base">
+        <span class="mat-button-wrapper">
+            <mat-icon _ngcontent-bhr-c226="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">menu</mat-icon>
+        </span>
+        
+        <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round"></span>
+        
+        <span class="mat-button-focus-overlay"></span>
+    </button>
+
+    <div _ngcontent-bhr-c226="" fxlayout="row" fxlayoutalign="space-between center" class="w-100" style="flex-direction: row; box-sizing: border-box; display: flex; place-content: center space-between; align-items: center;">
+        <a routerLink="/" >
+            NgTodo
+        </a>
+        
+        <div _ngcontent-bhr-c226="" fxflex="" style="flex: 1 1 0%; box-sizing: border-box;"></div>
+        
+        <nav *ngIf="user$" _ngcontent-bhr-c226="" fxlayoutalign="end center" style="place-content: center flex-end; align-items: center; flex-direction: row; box-sizing: border-box; display: flex;">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="User options">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/profile">
+                    <mat-icon>edit</mat-icon>
+                    <span>Edit Profile</span>
+                </button>
+
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+        </nav>
+
+        <nav *ngIf="!user$">
+            <button mat-raised-button type="button" aria-label="Login Button" routerLink="/login">
+                Ingresar
+            </button>&nbsp;
+
+            <button mat-raised-button type="button" aria-label="Register Button" routerLink="/register">
+                Registrarse
+            </button>
+        </nav>
+    </div>
+</mat-toolbar>

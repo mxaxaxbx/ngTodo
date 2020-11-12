@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-header>
+        <div
+            mat-card-avatar
+            [style.background]="'url(' + profileImage() + ')' "
+            [style.background-size]="'cover'"
+            matTooltip="Change profile picture"
+            aria-label="Change profile picture"
+            routerLink="/profile/image"
+        ></div>
+        <mat-card-title>
+            {{user$?.displayName || user$?.email}}
+            <button mat-icon-button matTooltip="Change Name" aria-label="Change profile name" routerLink="/profile/edit">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </mat-card-title>
+
+        <mat-card-subtitle>
+            {{user$?.email}}
+        </mat-card-subtitle>
+
+        <mat-card-subtitle>
+            {{user$?.phoneNumber}}
+        </mat-card-subtitle>
+    </mat-card-header>
+</mat-card>

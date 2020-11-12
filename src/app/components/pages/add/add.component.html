@@ -1,0 +1,37 @@
+<div align="center">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <p align="start">Add Task</p>
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <form [formGroup]="taskForm" (ngSubmit)="saveTask(taskForm.value)">
+                <mat-form-field appearance="outline">
+                    <mat-label>Task</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        placeholder="Enter Task"
+                        formControlName="task"
+                        autofocus
+                    />
+                    <mat-error *ngIf="taskForm.controls['task'].errors?.required">Task is required</mat-error>
+                </mat-form-field>
+
+                <p align="end">
+                    <button
+                        type="submit"
+                        mat-raised-button
+                        color="primary"
+                        disabled="{{!taskForm.valid}}"
+                    >
+                        <mat-icon aria-hidden="false" aria-label="Safe icon">save</mat-icon>
+                        <span>Save</span>
+                    </button>
+                </p>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

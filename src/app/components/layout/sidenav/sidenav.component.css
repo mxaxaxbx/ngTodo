@@ -1,0 +1,29 @@
+.app-container {
+    width: 100%;
+    height: 100%;
+}
+
+.app-sidenav-content {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-sidenav {
+    padding: 84px 0px;
+}
+
+button.bottom-button-nav {
+    bottom: 0;
+    position: absolute;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.active {
+    background: #a0a0a0;
+}
+
+.hidden {
+    display: none;
+}

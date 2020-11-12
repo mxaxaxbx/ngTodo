@@ -1,0 +1,52 @@
+[debug] [2020-11-12T15:35:48.170Z] ----------------------------------------------------------------------
+[debug] [2020-11-12T15:35:48.172Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\marenas\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2020-11-12T15:35:48.173Z] CLI Version:   8.16.0
+[debug] [2020-11-12T15:35:48.173Z] Platform:      win32
+[debug] [2020-11-12T15:35:48.173Z] Node Version:  v10.13.0
+[debug] [2020-11-12T15:35:48.174Z] Time:          Thu Nov 12 2020 10:35:48 GMT-0500 (GMT-05:00)
+[debug] [2020-11-12T15:35:48.174Z] ----------------------------------------------------------------------
+[debug] [2020-11-12T15:35:48.174Z] 
+[debug] [2020-11-12T15:35:48.176Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2020-11-12T15:35:48.193Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-12T15:35:48.194Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\marenas\Documents\PROYECTOS\angular-projects\ngTodo
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2020-11-12T15:35:55.263Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-11-12T15:35:55.263Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-11-12T15:35:55.921Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","date":"Thu, 12 Nov 2020 15:31:36 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-11-12T15:35:55.929Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects?pageSize=100  
+ 
+[debug] [2020-11-12T15:35:56.322Z] Server Error. self signed certificate in certificate chain
+[debug] [2020-11-12T15:35:56.732Z] FirebaseError: Server Error. self signed certificate in certificate chain
+    at Request._callback (C:\Users\marenas\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:32:31)
+    at self.callback (C:\Users\marenas\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:182:13)
+    at Request.EventEmitter.emit (domain.js:442:20)
+    at Request.onRequestError (C:\Users\marenas\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:877:8)
+    at ClientRequest.emit (events.js:187:15)
+    at ClientRequest.EventEmitter.emit (domain.js:442:20)
+    at TLSSocket.socketErrorListener (_http_client.js:391:9)
+    at TLSSocket.emit (events.js:182:13)
+    at TLSSocket.EventEmitter.emit (domain.js:442:20)
+    at emitErrorNT (internal/streams/destroy.js:82:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:50:3)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.

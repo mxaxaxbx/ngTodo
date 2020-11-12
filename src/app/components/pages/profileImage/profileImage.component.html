@@ -1,0 +1,28 @@
+<div align="center" *ngIf="!loading">
+    <mat-card>
+        <img
+            mat-card-image
+            [src]="profileImage"
+            class="profile-image"
+        >
+
+        <mat-card-actions>
+            <input hidden (change)="handleImage($event)" #fileInput type="file" id="file" accept="image/*" />
+            <button type="button" mat-raised-button (click)="fileInput.click()">Choose Image</button>
+
+            <div *ngIf="uploadImageBtn" align="end">
+                <button type="button" mat-raised-button color="primary" (click)="uploadProfilePhoto()">
+                    <mat-icon>cloud_upload</mat-icon>
+                </button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<div align="center" *ngIf="loading">
+    <mat-card>
+        <mat-card-content>
+            <mat-spinner></mat-spinner>
+        </mat-card-content>
+    </mat-card>
+</div>
