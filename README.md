@@ -1,6 +1,6 @@
 # NgTodo
 
-<a href="https://www.buymeacoffee.com/mxaxaxbx" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a href="https://www.buymeacoffee.com/mxaxaxbx" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 200px !important;" ></a>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
